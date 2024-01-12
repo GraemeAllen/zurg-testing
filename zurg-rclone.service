@@ -13,6 +13,10 @@ ExecStart=/home/yowmamasita/go/bin/rclone mount \
   --allow-other \
   --cache-dir=/opt/rclone/cache/zurg \
   --dir-cache-time=20s \
+  --vfs-cache-mode=full \
+  --vfs-cache-max-size=200G \
+  --retries=0M \
+  --low-level-retries=0 \
   zurg: /mnt/zurg
 ExecStop=/bin/bash -c '/bin/fusermount -uz /mnt/zurg; umount /mnt/zurg'
 Restart=on-abort
