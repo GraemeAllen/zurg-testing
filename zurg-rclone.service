@@ -19,6 +19,7 @@ ExecStart=/home/yowmamasita/go/bin/rclone mount \
   --vfs-read-ahead=50G \
   --retries=0M \
   --low-level-retries=0 \
+  --no-modtime \
   zurg: /mnt/zurg
 ExecStop=/bin/bash -c '/bin/fusermount -uz /mnt/zurg; umount /mnt/zurg'
 Restart=on-abort
